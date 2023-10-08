@@ -1,7 +1,7 @@
 # nube-itba
 
 Implementacion de modelo de incumplimiento de pago
-Fuente de Dataset:https://www.kaggle.com/code/raimar/riesgo-criditicio/input
+\nFuente de Dataset:https://www.kaggle.com/code/raimar/riesgo-criditicio/input
 
 Descripcion de variables:
 BAD: 1 = candidato con préstamo incumplido o con mora; 0 = candidato que paga su deuda y no tiene registro negativo
