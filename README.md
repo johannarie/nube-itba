@@ -19,4 +19,5 @@ NINQ:Número de consultas crediticas recientes
 CLNO: Número de líneas de crédito
 
 Diagrama de arquitectura
-->pendiente
+
+![PoC drawio](https://github.com/johannarie/nube-itba/assets/75706210/e9d7f756-f2f0-4d77-a760-802ce12be151)
