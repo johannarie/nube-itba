@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 #!/usr/bin/env python3
 import warnings
 warnings.filterwarnings('ignore')
