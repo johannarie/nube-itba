@@ -28,7 +28,7 @@ def hello():
 
 @app.route('/pagador', methods=['GET'])
 def pagador():
-    # Obtener los parámetros de la solicitud
+    # Obtenemos los parámetros 
     loan = float(request.args.get('LOAN'))
     value = float(request.args.get('VALUE'))
     yoj = float(request.args.get('YOJ'))
@@ -46,22 +46,22 @@ def pagador():
     job_sales = float(request.args.get('JOB:Sales'))
     job_self = float(request.args.get('JOB:Self'))
 
-    # Crear una lista con los valores
+    # Creamos una lista con los valores
     sample = [loan, value, yoj, derog, delinq, clage, ninq, clno, debtinc, reason_debtcon, job_mgr, job_office, job_other, job_profexe, job_sales, job_self]
     
-    # Realizar la predicción
+    # Realizamos la predicción
     prediction = pr.predict(sample)
-    # Obtener el valor de predicción
+    # Obtenemos el valor de predicción
     predicted_value = prediction['predicted_class']
 
-    # Obtener la probabilidad de incumplimiento
+    # Obtenemos la probabilidad de incumplimiento
     probability_default = prediction['predicted_probabilities'][0]
 
-    # Determinar si es un incumplimiento o no
+    # Determinamos si es un incumplimiento o no
     is_default = probability_default > 0.5
     result = "Default" if is_default else "No Default"
     
-    # Crear un diccionario que contiene sample, prediction y result
+    # Creareamos un diccionario que contiene sample, prediction y result
     response_dict = {
     "sample": sample,
     "prediction": predicted_value,
@@ -69,7 +69,7 @@ def pagador():
     "result": result
     }
 
-    # Convertir el diccionario en una respuesta JSON
+    # Convertimos en una respuesta JSON
     return jsonify(response_dict)
     
     '''
