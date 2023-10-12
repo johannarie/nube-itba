@@ -18,17 +18,6 @@ def fetch_pickle(bucket_name: str, folder: str, file_name: str):
 
     return fetched_object    
 
-#def get_model_and_encoders():
- #   print('Fetching binaries')
-  #  normalizer = fetch_pickle(BUCKET_NAME, FOLDER, 'normalizer.pkl')
-  #  encoder = fetch_pickle(BUCKET_NAME, FOLDER, 'encoder.pkl')
-  #  model = fetch_pickle(BUCKET_NAME, FOLDER, 'model.pkl')
-
-   # return normalizer, encoder, model
-
-###Prueba FINAL:FUNCIONAAAA
-#from sklearn.preprocessing import StandardScaler
-#import numpy as np
 
 def predict(sample: list) -> dict:
     """
