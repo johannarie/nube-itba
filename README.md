@@ -28,6 +28,7 @@ Para llevar a cabo este proceso, se utilizaron las siguientes herramientas y tec
 ![POC drawio (2)](https://github.com/johannarie/nube-itba/assets/75706210/8d6afe08-571f-49b4-a51c-bd4c96a32aaa)
 
 Entrenamiento de modelo
+
 Inicialmente, se realizó una verificación en busca de variables con más del 70% de valores nulos, y ninguna se encontró.
 Posteriormente, se procedió a dividir el conjunto de datos en dos subconjuntos: uno de entrenamiento (80%) y otro de prueba (20%). Además, se categorizaron las variables en categóricas y numéricas.
 En el caso de las variables categóricas, se calculó el coeficiente de correlación, lo que reveló una alta correlación entre el monto adeudado (MORTDUE) y el valor actual de la propiedad (VALUE). Por lo tanto, se decidió eliminar la variable MORTDUE.
@@ -49,6 +50,7 @@ Para probar la aplicación antes de implementarla en EC2, se verificó su funcio
 4. Con la aplicación en funcionamiento, se procedió a probar su correcta operación utilizando una solicitud HTTP a través de la URL en el navegador. La solicitud de prueba se realizó utilizando la siguiente URL:
 http://localhost:5000/pagador?LOAN=5000&VALUE=10000&YOJ=2&DEROG=0&DELINQ=0&CLAGE=30&NINQ=1&CLNO=10&DEBTINC=35&REASON:DebtCon=1&JOB:Mgr=0&JOB:Office=1&JOB:Other=0&JOB:ProfExe=0&JOB:Sales=0&JOB:Self=0
 5. El resultado de la solicitud de prueba fue una respuesta de la aplicación en formato JSON, similar a la que se muestra en la siguiente imagen:
-   ![predict localhost](https://github.com/johannarie/nube-itba/assets/75706210/7d86974a-4dd2-4aaa-89a4-7df6eedb22f0)
+   
+![predict localhost](https://github.com/johannarie/nube-itba/assets/75706210/7d86974a-4dd2-4aaa-89a4-7df6eedb22f0)
 
 
