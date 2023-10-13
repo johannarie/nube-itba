@@ -1,6 +1,6 @@
 # nube-itba
 
-Implementacion de modelo de incumplimiento de pago
+## Modelo de incumplimiento de pago
 
 Fuente de Dataset:https://www.kaggle.com/code/raimar/riesgo-criditicio/input
 
