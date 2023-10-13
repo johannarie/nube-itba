@@ -27,7 +27,7 @@ Para llevar a cabo este proceso, se utilizaron las siguientes herramientas y tec
 
 ![POC drawio (2)](https://github.com/johannarie/nube-itba/assets/75706210/8d6afe08-571f-49b4-a51c-bd4c96a32aaa)
 
-Entrenamiento de modelo
+## Entrenamiento de modelo
 
 Inicialmente, se realizó una verificación en busca de variables con más del 70% de valores nulos, y ninguna se encontró.
 Posteriormente, se procedió a dividir el conjunto de datos en dos subconjuntos: uno de entrenamiento (80%) y otro de prueba (20%). Además, se categorizaron las variables en categóricas y numéricas.
@@ -36,7 +36,7 @@ Las variables categóricas "REASON" y "JOB" se transformaron en variables dummy.
 Además, se optó por estandarizar algunas de las variables, y se exportó la serialización del proceso de estandarización. Todos estos pasos se aplicaron tanto al conjunto de entrenamiento como al de prueba.
 Una vez preparado el conjunto de datos, se procedió a entrenar un modelo de regresión logística y calcular las predicciones en el conjunto de prueba, junto con sus respectivas métricas. Este modelo fue serializado y guardado en formato Pickle para su posterior uso.
 
-Despliegue de modelo de aprendizaje automático con Flask en el servidor local (localhost).
+## Despliegue de modelo de aprendizaje automático con Flask en el servidor local (localhost).
 
 El script "PredictionVF.py" se utiliza para realizar predicciones de incumplimiento de pago utilizando un modelo de regresión logística previamente entrenado.Para utilizar este diccionario, es necesario que estén los archivos 'modelo.pkl' y 'scaler_model.pkl'.
 Al emplear la función "predict" y proporcionar una lista de muestras como argumento, se generará como resultado un diccionario que abarca la muestra original, la clase pronosticada (0 o 1), y las probabilidades.
