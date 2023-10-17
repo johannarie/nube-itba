@@ -40,6 +40,7 @@ Una vez preparado el conjunto de datos, se procedió a entrenar un modelo de reg
 
 El script "PredictionVF.py" se utiliza para realizar predicciones de incumplimiento de pago utilizando un modelo de regresión logística previamente entrenado.Para utilizar este diccionario, es necesario que estén los archivos 'modelo.pkl' y 'scaler_model.pkl'.
 Al emplear la función "predict" y proporcionar una lista de muestras como argumento, se generará como resultado un diccionario que abarca la muestra original, la clase pronosticada (0 o 1), y las probabilidades.
+
  ![predict test](https://github.com/johannarie/nube-itba/assets/75706210/a4e5a070-ea1e-481e-83e5-9c77b6b14968)
  
 El script "app-pd-final-json.py" crea una API web basada en Flask que permite a los usuarios realizar predicciones de incumplimiento de pago utilizando un modelo previamente entrenado. Los usuarios pueden acceder a esta API a través de una URL y proporcionar los parámetros necesarios para obtener una predicción sobre si un solicitante de préstamo incumplirá o no con su pago, junto con la probabilidad asociada. La aplicación utiliza un modelo previamente entrenado para realizar estas predicciones y devuelve los resultados en formato JSON.
