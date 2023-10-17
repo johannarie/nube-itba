@@ -55,4 +55,56 @@ http://localhost:5000/pagador?LOAN=5000&VALUE=10000&YOJ=2&DEROG=0&DELINQ=0&CLAGE
    
 ![predict localhost](https://github.com/johannarie/nube-itba/assets/75706210/7d86974a-4dd2-4aaa-89a4-7df6eedb22f0)
 
+## Despliegue de modelo de aprendizaje automático con Flask en AWS EC2.
+A continuación, se describen los pasos necesarios para implementar un modelo en AWS EC2:
+### Paso 1: Credenciales de AWS
+Antes de comenzar, se configuran las credenciales de AWS.
+
+### Paso 2: Clave PPK 
+Posteriormente, se descarga el archivo de clave PEM proporcionado por AWS, mueve a la carpeta ".ssh" 
+
+### Paso 3: Conexión a través de PuTTY
+A continuacion, se usa PuTTY para establecer la conexión con la instancia de AWS EC2 siguiendo estos pasos:
+  a.	Establece el host Name (ver instancia ec2)
+  b.	Configura las credenciales utilizando el archivo PPK descargado.
+  c.	Inicia la sesión con el nombre de usuario "Ubuntu."
+
+### Paso 4: Transferencia de Archivos desde tu Máquina Local a EC2
+Usa SCP en la terminal de PowerShell para copiar archivos desde tu máquina local a la instancia de EC2:
+```powershell
+scp -i “C:\Users\jsrie\.ssh\vockey.pem” “C:\Users\jsrie\Downloads\model-pd-aws-VF.zip” ubuntu@ec2-34-235-114-77.compute-1.amazonaws.com:
+
+```
+### Paso 5: Configuración en la Instancia Ubuntu
+Una vez conectado a la instancia de Ubuntu, realiza las siguientes acciones:
+a. Instalación de paquetes y actualización:
+   - Ejecuta los siguientes comandos para instalar paquetes y actualizar el sistema:
+     ```bash
+     sudo apt install zip unzip
+     sudo apt-get update
+     sudo apt-get install -y unzip python3.10 python3-pip virtualenv
+     ```
+b. Descomprime el archivo zip:
+   - Descomprime el archivo que transferiste:
+     ```bash
+     unzip model-pd-aws-VF.zip
+     ```
+c. Activa el entorno virtual:
+   - Crea y activa un entorno virtual:
+     ```bash
+     virtualenv env --python=python3.10
+     source env/bin/activate
+     ```
+   - Instala las dependencias necesarias para tu proyecto:
+     ```bash
+     pip install -r requirements.txt --no-cache-dir
+     ```
+   - Inicia tu aplicación:
+     ```bash
+     python app-pd-final-json.py
+     ```
+
+
+
+
 
