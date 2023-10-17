@@ -25,7 +25,7 @@ Para llevar a cabo este proceso, se utilizaron las siguientes herramientas y tec
 - **Framework para Desarrollo Web**: Flask
 - **Acceso a la Máquina Remota**: PuTTY
 
-![POC drawio (2)](https://github.com/johannarie/nube-itba/assets/75706210/8d6afe08-571f-49b4-a51c-bd4c96a32aaa)
+![POC drawio (2)](https://github.com/johannarie/nube-itba/assets/75706210/a7fa884b-3c07-4b1d-b650-09d79a75a7fb)
 
 ## Entrenamiento de modelo
 
@@ -41,7 +41,7 @@ Una vez preparado el conjunto de datos, se procedió a entrenar un modelo de reg
 El script "PredictionVF.py" se utiliza para realizar predicciones de incumplimiento de pago utilizando un modelo de regresión logística previamente entrenado.Para utilizar este diccionario, es necesario que estén los archivos 'modelo.pkl' y 'scaler_model.pkl'.
 Al emplear la función "predict" y proporcionar una lista de muestras como argumento, se generará como resultado un diccionario que abarca la muestra original, la clase pronosticada (0 o 1), y las probabilidades.
 
- ![predict test](https://github.com/johannarie/nube-itba/assets/75706210/a4e5a070-ea1e-481e-83e5-9c77b6b14968)
+![predict test](https://github.com/johannarie/nube-itba/assets/75706210/58531065-d2df-4cad-8529-be8f166137fd)
  
 El script "app-pd-final-json.py" crea una API web basada en Flask que permite a los usuarios realizar predicciones de incumplimiento de pago utilizando un modelo previamente entrenado. Los usuarios pueden acceder a esta API a través de una URL y proporcionar los parámetros necesarios para obtener una predicción sobre si un solicitante de préstamo incumplirá o no con su pago, junto con la probabilidad asociada. La aplicación utiliza un modelo previamente entrenado para realizar estas predicciones y devuelve los resultados en formato JSON.
 Para probar la aplicación antes de implementarla en EC2, se verificó su funcionamiento en el entorno local utilizando la terminal de Anaconda PowerShell y se realizó una prueba a través de una solicitud HTTP para asegurarse de que la aplicación funciona. El proceso de prueba se llevó a cabo de la siguiente manera:
@@ -54,7 +54,7 @@ Para probar la aplicación antes de implementarla en EC2, se verificó su funcio
 http://localhost:5000/pagador?LOAN=5000&VALUE=10000&YOJ=2&DEROG=0&DELINQ=0&CLAGE=30&NINQ=1&CLNO=10&DEBTINC=35&REASON:DebtCon=1&JOB:Mgr=0&JOB:Office=1&JOB:Other=0&JOB:ProfExe=0&JOB:Sales=0&JOB:Self=0
 5. El resultado de la solicitud de prueba fue una respuesta de la aplicación en formato JSON, similar a la que se muestra en la siguiente imagen:
    
-![predict localhost](https://github.com/johannarie/nube-itba/assets/75706210/7d86974a-4dd2-4aaa-89a4-7df6eedb22f0)
+![predict localhost](https://github.com/johannarie/nube-itba/assets/75706210/c2f7bac1-7116-4da5-baac-8c63221acc6f)
 
 ## Despliegue de modelo de aprendizaje automático con Flask en AWS EC2.
 A continuación, se describen los pasos necesarios para implementar un modelo en AWS EC2:
@@ -105,9 +105,4 @@ c. Activa el entorno virtual:
      python app-pd-final-json.py
      ```
      
-![predictionEC2](https://github.com/johannarie/nube-itba/assets/75706210/58c21483-3c28-41ce-9d48-b5aeb4885a53)
-
-
-
-
-
+![predictionEC2](https://github.com/johannarie/nube-itba/assets/75706210/d9afc074-0231-4b02-9821-fc2f0997bf21)
