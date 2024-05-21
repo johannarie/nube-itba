@@ -70,8 +70,8 @@ A continuacion, se usa PuTTY para establecer la conexión con la instancia de AW
   b.	Configurar las credenciales utilizando el archivo PPK descargado.
   c.	Iniciar la sesión con el nombre de usuario "Ubuntu."
 
-### Paso 4: Transferencia de Archivos desde tu Máquina Local a EC2
-Se usa SCP en la terminal de PowerShell para copiar archivos desde tu máquina local a la instancia de EC2:
+### Paso 4: Transferencia de Archivos desde la Máquina Local a EC2
+Se usa SCP en la terminal de PowerShell para copiar archivos desde la máquina local a la instancia de EC2:
 ```powershell
 scp -i “C:\Users\jsrie\.ssh\vockey.pem” “C:\Users\jsrie\Downloads\model-pd-aws-VF.zip” ubuntu@ec2-34-235-114-77.compute-1.amazonaws.com:
 
@@ -96,11 +96,11 @@ c. Activa el entorno virtual:
      virtualenv env --python=python3.10
      source env/bin/activate
      ```
-   - Se instalan las dependencias necesarias para tu proyecto:
+   - Se instalan las dependencias necesarias para el proyecto:
      ```bash
      pip install -r requirements.txt --no-cache-dir
      ```
-   - Se inicia tu aplicación:
+   - Se inicia la aplicación:
      ```bash
      python app-pd-final-json.py
      ```
